@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>계산기</title>
+<title>Insert title here</title>
+
 <!-- bootstrap -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -14,24 +15,39 @@
 <!-- jquery slim 제거-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 </head>
 <body>
+	<%
+		int centimeter = Integer.parseInt(request.getParameter("centimeter"));
+		String[] unit = request.getParameterValues("unit");
+		String[] unitArr = new String[4];
+		
+		for (int i = 0; i < unit.length; i++) {
+				if (unit[i].equals("inch")) {
+					unitArr[i] = String.valueOf(centimeter / 2.54) + " in";
+				} else if (unit[i].equals("yard")) {
+					unitArr[i] = String.valueOf(centimeter / 91.44) + " yd";
+				} else if (unit[i].equals("feet")) {
+					unitArr[i] = String.valueOf(centimeter / 30.48) + " ft";
+				} else if (unit[i].equals("meter")){
+					unitArr[i] = String.valueOf(centimeter / (double)100) + " m";
+				}
+			}
+	%>
+	
 	<div class="container">
-	<h1>사칙 연산 계산기</h1>
-		<form method="post" action="/lesson02/quiz04_1.jsp">
-			<div class="d-flex">
-				<input type="text" class="form-control col-2" name="num1">
-				<select name="sum" class="form-control col-1 ml-2">
-					<option selected>+</option>
-					<option>-</option>
-					<option value="X">*</option>
-					<option>/</option>
-				</select>
-				<input type="text" name="num2" class="form-control col-2 ml-2">
-				<button type="submit" class="btn btn-success ml-2">계산하기</button>
-			</div>
-		</form>
+		<h1>길이 변환 결과</h1>
+		<h3><%= centimeter + "cm" %></h3>
+		<hr>
+		<h3>
+			<%
+				for (int i = 0; i < unit.length; i++) {
+					if (unit[i] != null) {
+						out.println(unitArr[i] + " " + "<br>");
+					}
+				}
+			 %>
+		</h3>
 	</div>
 </body>
 </html>

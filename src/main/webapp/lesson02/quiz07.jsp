@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>계산기</title>
+<title>배탈의 민족</title>
 <!-- bootstrap -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -14,24 +14,19 @@
 <!-- jquery slim 제거-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 </head>
 <body>
 	<div class="container">
-	<h1>사칙 연산 계산기</h1>
-		<form method="post" action="/lesson02/quiz04_1.jsp">
+		<h1>메뉴 검색</h1>
+		<form method="post" action="/lesson02/quiz07_1.jsp">
 			<div class="d-flex">
-				<input type="text" class="form-control col-2" name="num1">
-				<select name="sum" class="form-control col-1 ml-2">
-					<option selected>+</option>
-					<option>-</option>
-					<option value="X">*</option>
-					<option>/</option>
-				</select>
-				<input type="text" name="num2" class="form-control col-2 ml-2">
-				<button type="submit" class="btn btn-success ml-2">계산하기</button>
+				<input type="text" class="form-control col-3" name="name">
+				<input type="checkbox" id="review" name="point">
+				<label for="review">4점 이하 제외</label>
 			</div>
+			<button type="submit" class="btn-success btn">검색</button>
 		</form>
 	</div>
+
 </body>
 </html>

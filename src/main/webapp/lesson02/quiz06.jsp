@@ -1,10 +1,14 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>계산기</title>
+<title>Insert title here</title>
+
 <!-- bootstrap -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -14,24 +18,40 @@
 <!-- jquery slim 제거-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 </head>
 <body>
+	<%
+		List<String> goodsList = Arrays.asList(new String[]{ 
+		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
+		});
+	%>
 	<div class="container">
-	<h1>사칙 연산 계산기</h1>
-		<form method="post" action="/lesson02/quiz04_1.jsp">
-			<div class="d-flex">
-				<input type="text" class="form-control col-2" name="num1">
-				<select name="sum" class="form-control col-1 ml-2">
-					<option selected>+</option>
-					<option>-</option>
-					<option value="X">*</option>
-					<option>/</option>
-				</select>
-				<input type="text" name="num2" class="form-control col-2 ml-2">
-				<button type="submit" class="btn btn-success ml-2">계산하기</button>
-			</div>
-		</form>
+		<h1>장보기 목록</h1>
+			<table class="table text-center">
+				<thead>
+					<th scope="col">번호</th>
+					<th scope="col">품목</th>
+				</thead>
+				<tbody>
+	<%	
+		int number = 0;
+		Iterator<String> iter = goodsList.iterator();
+		while (iter.hasNext()) {
+			number++;
+			String food = iter.next();
+			
+	%>
+					<tr>
+						<th><%= number %></th>
+						<td><%= food %></td>
+					</tr>
+	<%
+		
+	
+		}
+	%>
+				</tbody>
+			</table>
 	</div>
 </body>
 </html>
