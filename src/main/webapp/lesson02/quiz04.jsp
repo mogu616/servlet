@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>계산기</title>
 <!-- bootstrap -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -22,14 +22,14 @@
 		<form method="post" action="/lesson02/quiz04_1.jsp">
 			<div class="d-flex">
 				<input type="text" name="num1">
-				<select name="sum">
+				<select name="sum" class="col-1 ml-2">
 					<option selected>+</option>
 					<option>-</option>
-					<option>*</option>
+					<option value="X">*</option>
 					<option>/</option>
 				</select>
-				<input type="text" name="num2">
-				<button type="submit" class="btn btn-info">계산하기</button>
+				<input type="text" name="num2" class="ml-2">
+				<button type="submit" class="btn btn-success ml-2">계산하기</button>
 			</div>
 		</form>
 	</div>

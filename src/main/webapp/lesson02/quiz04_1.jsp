@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>계산기</title>
+
 <title>Insert title here</title>
 <!-- bootstrap -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -17,7 +19,27 @@
 </head>
 <body>
 	<%
-		int sum 
+		int num1 = Integer.parseInt(request.getParameter("num1"));
+		int num2 = Integer.parseInt(request.getParameter("num2"));
+		String sum = request.getParameter("sum");
+		
+		double cal = 0;
+		if (sum.equals("+")) {
+			cal = (double)num1 + num2;
+		} else if (sum.equals("-")) {
+			cal = (double)num1 - num2;
+		} else if (sum.equals("X")) {
+			cal = (double)num1 * num2;
+		} else {
+			cal = (double)num1 / num2;
+		}
+		
 	%>
+	
+	<div class="container">
+		<h1>계산 결과</h1>
+		<div class="display-3"><%= num1 + " " + sum + " " + num2 + " = " %> 
+		<span class="text-info"><%= cal %></span></div>
+	</div>
 </body>
 </html>
