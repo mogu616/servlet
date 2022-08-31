@@ -21,10 +21,11 @@
 		<form method="post" action="/lesson02/quiz07_1.jsp">
 			<div class="d-flex">
 				<input type="text" class="form-control col-3" name="name">
-				<input type="checkbox" id="review" name="point">
-				<label for="review">4점 이하 제외</label>
+				<label>
+				<input type="checkbox" class="ml-2 mt-3" name="point">
+				4점 이하 제외</label>
 			</div>
-			<button type="submit" class="btn-success btn">검색</button>
+			<button type="submit" class="btn-success btn mt-2">검색</button>
 		</form>
 	</div>
 
