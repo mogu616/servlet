@@ -35,7 +35,7 @@
 		}
 		
 	%>
-	
+	gimt6747	a
 	<div class="container">
 		<h1>계산 결과</h1>
 		<div class="display-3"><%= num1 + " " + sum + " " + num2 + " = " %> 
