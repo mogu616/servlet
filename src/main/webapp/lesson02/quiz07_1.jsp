@@ -56,7 +56,7 @@
 				if (map1.containsValue(name) && (double)map1.get("point") >= 4) {
 	%>
 					<tr>
-						<th><%= map1.get("menu") %></th>
+						<td><%= map1.get("menu") %></td>
 						<td><%= map1.get("name") %></td>
 						<td><%= map1.get("point") %></td>
 					</tr>
@@ -67,7 +67,7 @@
 			
 	%>
 					<tr>
-						<th><%= map1.get("menu") %></th>
+						<td><%= map1.get("menu") %></td>
 						<td><%= map1.get("name") %></td>
 						<td><%= map1.get("point") %></td>
 					</tr>
