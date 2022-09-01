@@ -40,20 +40,26 @@
     
     	String name = request.getParameter("name");
     	String check = request.getParameter("point");
+    	
+    	boolean exclude = check != null;	// 스트링 값 자체를 불린값에 넣을때 
 	%>
 	<div class="container">
 		<h1 class="text-center">검색 결과</h1>
 			<table class="table text-center">
 				<thead>
-					<th scope="col">메뉴</th>
-					<th scope="col">상호</th>
-					<th scope="col">별점</th>
+					<th>메뉴</th>
+					<th>상호</th>
+					<th>별점</th>
 				</thead>
 				<tbody>
 	<%	
 		for (Map<String, Object> map1 : list) {
 			if (check != null) {
-				if (map1.containsValue(name) && (double)map1.get("point") >= 4) {
+				// if (map1.containsValue(name) && (double)map1.get("point") >= 4) {
+				if (name.equals(map1.get("menu"))) {
+					if (exclude && (double)map1.get("point") <= 4.0) {
+						continue;
+					}
 	%>
 					<tr>
 						<td><%= map1.get("menu") %></td>
