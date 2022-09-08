@@ -15,10 +15,10 @@
 		<h1>즐겨찾기 추가</h1>
 		<form method="get" action="/lessson04/ex02_insert">
 			<label for="name">사이트명:</label>
-			<input type="text" id="name" name="name">
+			<input type="text" class="form-control col-3" id="name" name="name">
 			<label for="url">사이트명 주소:</label>
-			<input type="text" id="url" name="url">
-			<button type="submit" class="btn btn-success">추가</button>
+			<input type="text" class="form-control col-6" id="url" name="url">
+			<button type="submit" class="btn btn-success mt-3">추가</button>
 		</form>
 	</div>
 </body>

@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class MysqlService {
 	private static MysqlService mysqlService;
 	
-	private String url = "jdbc:mysql://localhost:3306/test_220617";	// 도메인 뒤에 접속할 데이터 베이스명까지 적는다.
+	private String url = "jdbc:mysql://localhost:3306/ming_0707";	// 도메인 뒤에 접속할 데이터 베이스명까지 적는다.
 	private String id = "root";
 	private String pw = "root";
 	
