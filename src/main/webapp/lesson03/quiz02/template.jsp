@@ -30,7 +30,6 @@ header > .search {width:400px;}
 .content2-musicInfo {width:1200px; height:250px; border:solid 1px #29A745;}
 .content1-list {width:1200px; height:400px};
 
-
 footer {width:1200px; height:50px;}
 
 </style>
@@ -39,7 +38,6 @@ footer {width:1200px; height:50px;}
 <%
     String title = request.getParameter("title");
 %>
-
 	<div id="wrap" class="container">
 		<jsp:include page="header.jsp"/>
 		<jsp:include page="menu.jsp"/>
